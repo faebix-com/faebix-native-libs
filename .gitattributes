@@ -1,0 +1,9 @@
+# Own files: always LF, so the shell scripts run on any checkout.
+* text=auto eol=lf
+
+# Third-party sources stay byte-identical to the upstream archives
+# (scripts/verify-sources.sh compares them file by file).
+third_party/** -text
+licenses/** -text
+keys/** -text
+LICENSE -text

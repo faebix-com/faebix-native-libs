@@ -1,0 +1,26 @@
+faebix-native-libs
+Copyright 2026 faebix
+
+The build scripts, CMake files, tests and the CI workflow of this repository
+are licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository contains the following third-party software as unchanged
+upstream source; the release archives hold libraries built from it. The
+licenses are in licenses/.
+
+libjpeg-turbo 3.2.0
+  https://libjpeg-turbo.org
+  This software is based in part on the work of the Independent JPEG Group.
+  Licensed under the IJG License (licenses/libjpeg-turbo/README.ijg) and the
+  Modified (3-clause) BSD License (licenses/libjpeg-turbo/LICENSE.md). The
+  SIMD extensions are licensed under the zlib License
+  (licenses/libjpeg-turbo/zlib-License.txt).
+  Copyright (C) 1991-2020, Thomas G. Lane, Guido Vollbeding.
+  Copyright (C) 2009-2026 D. R. Commander.
+  Copyright (C) 2018-2023 Randy <randy408@protonmail.com>.
+  The SIMD source files name further copyright holders.
+
+piex (Preview Image Extractor), commit 4d59203c0aa957e9b80a7c7ca78f7af1771dc033
+  https://github.com/google/piex
+  Copyright 2015-2020 Google Inc.
+  Licensed under the Apache License, Version 2.0 (licenses/piex/LICENSE).

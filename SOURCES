@@ -1,0 +1,19 @@
+# Upstream sources in third_party/, unmodified.
+# Read by scripts/verify-sources.sh. Fields are separated by spaces.
+#
+# libjpeg-turbo: the release archive and its detached GPG signature.
+#   The signature is checked against keys/libjpeg-turbo-signing-key.asc
+#   (fingerprint below), as published by the libjpeg-turbo project.
+# piex: no releases upstream, so a git commit is pinned.
+
+libjpeg-turbo.version 3.2.0
+libjpeg-turbo.url https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz
+libjpeg-turbo.sha256 6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e
+libjpeg-turbo.signature https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz.sig
+libjpeg-turbo.signing_key_fingerprint 0338C8D8D9FDA62CF9C421BD7EC2DBB6F4DBF434
+libjpeg-turbo.dir third_party/libjpeg-turbo
+
+piex.repository https://github.com/google/piex
+piex.commit 4d59203c0aa957e9b80a7c7ca78f7af1771dc033
+piex.commit_date 2024-01-22
+piex.dir third_party/piex
