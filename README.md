@@ -46,7 +46,8 @@ code writes a JPEG with an ICC profile and passes it to piex. It is only
 linked, not executed: linking with `--no-undefined` catches missing symbols,
 and [`scripts/check-16k.sh`](scripts/check-16k.sh) checks that every
 LOAD segment of the result is aligned to 16 KB, as required for 16 KB page
-devices.
+devices. 16 KB pages exist only on 64-bit devices, so the check applies to
+`arm64-v8a` and `x86_64`; the 32-bit ABIs keep the NDK's 4 KB alignment.
 
 ## Build
 
