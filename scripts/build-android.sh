@@ -130,7 +130,16 @@ build_abi() {
   "$CMAKE" --build "$(native "$work/linkcheck")"
   local so="$work/linkcheck/liblinkcheck.so"
   "$STRIP" --strip-unneeded -o "$work/liblinkcheck-stripped.so" "$so"
-  "$ROOT/scripts/check-16k.sh" "$work/liblinkcheck-stripped.so"
+  # 16 KB pages exist only on 64-bit devices, and the NDK aligns only the 64-bit ABIs to
+  # 16 KB. The 32-bit ABIs keep 4 KB; their alignment is only shown.
+  case "$abi" in
+    arm64-v8a | x86_64) "$ROOT/scripts/check-16k.sh" "$work/liblinkcheck-stripped.so" ;;
+    *)
+      local aligns
+      aligns="$("$READELF" -lW "$work/liblinkcheck-stripped.so" | awk '$1 == "LOAD" { print $NF }' | sort -u | tr '\n' ' ')"
+      echo "INFO $abi (32-bit): LOAD segments aligned to $aligns"
+      ;;
+  esac
   local so_bytes
   so_bytes="$(wc -c < "$work/liblinkcheck-stripped.so" | tr -d ' ')"
 
